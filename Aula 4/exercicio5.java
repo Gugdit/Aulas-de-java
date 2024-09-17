@@ -1,7 +1,7 @@
 public class exercicio5 {
     public static void main(String[] args) {
         System.out.println("--------------------Exercício 5: Cálculo de horas extras--------------------");
-        int horastrabalhadas = 39;
+        int horastrabalhadas = -73;
         int horasextras = horastrabalhadas - 40;
         int salarionormalsemhoraextra = horastrabalhadas - horasextras;
         int salariohoranormaltotal = salarionormalsemhoraextra * 20;
@@ -12,10 +12,11 @@ public class exercicio5 {
             System.out.println("Seu bônus pelas as horas extras foram: " + salarioporhoraextra);
             int salariototalcomextra = salariohoranormaltotal + salarioporhoraextra;
             System.out.println("Seu sálario total é " + salariototalcomextra);
-        } else if (horastrabalhadas <= 40) {
+        } else if (horastrabalhadas <= 40 && horastrabalhadas >= 0) {
             int salarionormal = salariohoranormaltotal;
             System.out.println("Você não fez hora extra seu sálario é: " + salarionormal);
-
+        } else {
+            System.out.println("Não aceitamos números negativos");
         }
     }
 }
