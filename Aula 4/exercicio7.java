@@ -1,6 +1,8 @@
+import java.util.Scanner;
 public class exercicio7 {
     public static void main(String[] args) {
         System.out.println("--------------------Exercício 7: Escolha de Operação--------------------");
+        Scanner scanner = new Scanner(System.in);
         double numero1 = 5;
         double numero2 = 8;
         System.out.println("Seus numeros escolhidos foram " + numero1 +" e "+ numero2);

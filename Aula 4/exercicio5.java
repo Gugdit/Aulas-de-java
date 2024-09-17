@@ -1,6 +1,8 @@
+import java.util.Scanner;
 public class exercicio5 {
     public static void main(String[] args) {
         System.out.println("--------------------Exercício 5: Cálculo de horas extras--------------------");
+        Scanner scanner = new Scanner(System.in);
         int horastrabalhadas = -73;
         int horasextras = horastrabalhadas - 40;
         int salarionormalsemhoraextra = horastrabalhadas - horasextras;

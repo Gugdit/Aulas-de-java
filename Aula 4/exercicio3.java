@@ -1,8 +1,10 @@
+import java.util.Scanner;
 public class exercicio3 {
     public static void main(String[] args) {
         System.out.println("--------------------Exercício 3: Classificação de Produto--------------------");
         System.out.println("Qual o codigo do seu produto?");
-        int codigodoproduto = 3;
+        Scanner scanner = new Scanner(System.in);
+        int codigodoproduto = scanner.nextInt();
         System.out.println("O codigo do seu produto é " + codigodoproduto);
         switch (codigodoproduto){
             case 1:

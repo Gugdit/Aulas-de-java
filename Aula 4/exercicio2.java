@@ -1,7 +1,9 @@
+import java.util.Scanner;
 public class exercicio2 {
     public static void main(String[] args) {
         System.out.println("--------------------Exercício 2: Desconto em compra--------------------");
         System.out.println("Qual o valor da sua compra");
+        Scanner scanner = new Scanner(System.in);
         int valordacompra = -12312312;
         System.out.println("O valor da sua compra é: " + valordacompra);
         if (valordacompra >= 100) {
