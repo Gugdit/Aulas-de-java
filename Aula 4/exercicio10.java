@@ -1,7 +1,7 @@
 public class exercicio10 {
     public static void main(String[] args) {
         System.out.println("--------------------Exercício 10: Conversão de moedas--------------------");
-        double valorreais = 200.0;
+        double valorreais = 2123.0;
         int codigomoeda = 1;
         System.out.println("Escolha um código para a moeda a ser convertida, 1-Dólar, 2-Euro, 3-Libra ");
         System.out.println("Seu codigo é " +codigomoeda);
