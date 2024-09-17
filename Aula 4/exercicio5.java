@@ -12,7 +12,7 @@ public class exercicio5 {
             System.out.println("Seu bônus pelas as horas extras foram: " + salarioporhoraextra);
             int salariototalcomextra = salariohoranormaltotal + salarioporhoraextra;
             System.out.println("Seu sálario total é " + salariototalcomextra);
-        } else if (horastrabalhadas <= 40){
+        } else if (horastrabalhadas <= 40) {
             int salarionormal = salariohoranormaltotal;
             System.out.println("Você não fez hora extra seu sálario é: " + salarionormal);
 
