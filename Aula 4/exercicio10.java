@@ -24,7 +24,6 @@ public class exercicio10 {
                 break;
             default:
                 System.out.println("Esse código não existe, escolha outro.");
-
         }
     }
 }
