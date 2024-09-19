@@ -2,12 +2,16 @@ import java.util.Scanner;
 public class exercicio7 {
     public static void main(String[] args) {
         System.out.println("--------------------Exercício 7: Escolha de Operação--------------------");
+        System.out.println("Fale um número");
         Scanner scanner = new Scanner(System.in);
-        double numero1 = 5;
-        double numero2 = 8;
+        double numero1 = scanner.nextDouble();
+        System.out.println("Fale outro número");
+        Scanner scanner2 = new Scanner(System.in);
+        double numero2 = scanner2.nextDouble();
         System.out.println("Seus numeros escolhidos foram " + numero1 +" e "+ numero2);
         System.out.println("Escolha uma opção, 1-Soma, 2-Subtração, 3-Multiplicação, 4-Divisão. ");
-        int operação = 3;
+        Scanner scanner3 = new Scanner(System.in);
+        int operação = scanner3.nextInt();
         System.out.println("Seu número escolhido é " + operação);
         switch (operação) {
             case 1:

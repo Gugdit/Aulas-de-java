@@ -3,7 +3,7 @@ public class exercicio10 {
     public static void main(String[] args) {
         System.out.println("--------------------Exercício 10: Conversão de moedas--------------------");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Escolha um código para a moeda a ser convertida, 1-Dólar, 2-Euro, 3-Libra ");
+        System.out.println("Códigos para a moeda a ser convertida, 1-Dólar, 2-Euro, 3-Libra ");
         System.out.println("Digite um codigo para moedas");
         int codigomoeda = scanner.nextInt();
         System.out.println("Digite um valor em reais");

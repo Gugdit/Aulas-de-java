@@ -3,7 +3,8 @@ public class exercicio4 {
     public static void main(String[] args) {
         System.out.println("--------------------Exercício 4: Cálculo de comissão--------------------");
         Scanner scanner = new Scanner(System.in);
-        double valorVenda = -59012;
+        System.out.println("Qual o valor da venda do funcionário?");
+        double valorVenda = scanner.nextDouble();
         System.out.println("Valor da venda do funcionário é " + valorVenda);
         if (valorVenda <= 1000 && valorVenda >= 0) {
             double commissão5 = valorVenda * 0.05;

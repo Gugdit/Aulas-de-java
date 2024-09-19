@@ -4,7 +4,7 @@ public class exercicio9 {
         System.out.println("--------------------Exercício 9: Determinação de turno--------------------");
         System.out.println("Os turnos são, 1-Manhã (5 às 12), 2-Tarde (12 às 18), 3-Noite (18 às 22), 4-Madrugada (22 às 5)");
         Scanner scanner = new Scanner(System.in);
-        int horáriododia = -123;
+        int horáriododia = scanner.nextInt();
         System.out.println("O horário do dia é " + horáriododia);
         if (horáriododia >= 5 && horáriododia <= 12) {
             System.out.println("Seu turno é Manhã");
