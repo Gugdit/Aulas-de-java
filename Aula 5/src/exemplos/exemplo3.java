@@ -15,6 +15,7 @@ public class exemplo3 {
             nomeDigitado = scanner.nextLine();
         }
         System.out.println("Parabéns esse é o seu nome!!!!");
+        scanner.close();
 
     }
 }
