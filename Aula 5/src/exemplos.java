@@ -4,6 +4,7 @@ public class exemplos {
         Scanner scanner = new Scanner(System.in);
         String nome = "Gustavo", digitada="";
 
+
         while (nome.equals(digitada)){
             System.out.println("Digite seu nome");
             digitada= scanner.next();
