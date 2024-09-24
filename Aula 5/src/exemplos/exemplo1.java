@@ -1,5 +1,7 @@
+package exemplos;
+
 import java.util.Scanner;
-public class exemplos {
+public class exemplo1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String nome = "Gustavo", digitada="";
@@ -12,5 +14,3 @@ public class exemplos {
         System.out.println("Parabens esse é seu nome");
     }
 }
-
-
