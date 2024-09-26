@@ -14,7 +14,7 @@ public class exercicio3 {
             double numero2 = numero *= fatorial;
             double numero3 = numero2/fatorial;
             if (fatorial==1) {
-                System.out.println("O seu fatorial é " + numero3);
+                System.out.println("O seu fatorial é mais bonito que o igor" + numero3);
             }
 
         } while (fatorial >= 0);
