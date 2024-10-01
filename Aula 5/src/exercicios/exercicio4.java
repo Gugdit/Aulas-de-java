@@ -7,16 +7,14 @@ public class exercicio4 {
         System.out.println("-------------------Exercício 4: Verificação de Número Primo-------------------");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Escolha um número, para checar se ele é primo ou não");
-        double numero = scanner.nextDouble();
-        for (double contador = numero; contador >= 1; contador--) {
-            double resultado = contador % numero;
-            if (resultado == 0) {
+        int numero = scanner.nextInt();
+        for (boolean exit = true; exit == true;) {
+            if (numero % 2 == 0 || numero % 3 == 0 || numero % 5 == 0 || numero % 7 == 0) {
                 System.out.println("Seu numero não é um primo: " + numero);
-                System.out.println("Acabou");
-            } else if (resultado != 0) {
+                exit = false;
+            } else if (numero % 2 != 0 || numero % 3 != 0 || numero % 5 != 0 || numero % 7 != 0) {
                 System.out.println("Seu numero é um primo: " + numero);
-                System.out.println("Acabou");
-
+                exit = false;
             }
         }
     }
