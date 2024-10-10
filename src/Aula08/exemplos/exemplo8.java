@@ -16,6 +16,7 @@ public class exemplo8 {
                 }
                 bufferedReader.close();
             }catch (Exception e) {
+
                 throw new RuntimeException();
             }
         }
