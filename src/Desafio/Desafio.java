@@ -1,4 +1,4 @@
-package Aula06.exercicios;
+package Desafio;
 
 import java.util.Scanner;
 
@@ -25,7 +25,7 @@ public class Desafio {
             matriz[posicao][3] = scanner.nextLine();
 
         }
-        System.out.println("ID    Nome      E-mail       Telefone");
+        System.out.println("ID" +"\t"+"Nome"+"\t"+"E-mail"+"\t\t\t"+"Telefone");
         for (int posicao2 = 0; posicao2 < dinamico; posicao2++) {
             System.out.println(matriz[posicao2][0] +"\t"+ matriz[posicao2][1] +"\t"+ matriz[posicao2][2] +"\t"+ matriz[posicao2][3]);
 
