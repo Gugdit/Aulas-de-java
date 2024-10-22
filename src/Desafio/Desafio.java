@@ -7,7 +7,7 @@ public class Desafio {
         System.out.println("-------------------Desafio!!!!-------------------");
         Scanner scanner = new Scanner(System.in);
 
-        String[][] matriz = null;
+        String[][] matriz = {};
         boolean entrada = true;
 
         while (entrada) {
@@ -42,22 +42,22 @@ public class Desafio {
 
     static String[][] cadastrar(String[][] matriz) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Quantas pessoas você deseja cadastrar?");
+        System.out.print("Quantas pessoas você deseja cadastrar:");
         int numCadastros = scanner.nextInt();
         scanner.nextLine();
-        matriz = new String[numCadastros][4];
-        for (int posicao = 0; posicao < numCadastros; posicao++) {
+        matriz = new String[numCadastros + 1][4];
+        for (int posicao = 1; posicao < numCadastros+1; posicao++) {
             System.out.println("Cadastro da pessoa " + posicao);
-            System.out.println("ID: ");
+            System.out.print("ID: ");
             matriz[posicao][0] = scanner.nextLine();
 
-            System.out.println("Nome: ");
+            System.out.print("Nome: ");
             matriz[posicao][1] = scanner.nextLine();
 
-            System.out.println("E-mail: ");
+            System.out.print("E-mail: ");
             matriz[posicao][2] = scanner.nextLine();
 
-            System.out.println("Telefone: ");
+            System.out.print("Telefone: ");
             matriz[posicao][3] = scanner.nextLine();
 
         }
@@ -65,30 +65,32 @@ public class Desafio {
     }
 
     static String[][] consultar(String[][] matriz) {
-        System.out.println("ID" + "\t" + "Nome" + "\t" + "E-mail" + "\t\t\t" + "Telefone");
-        for (int posicao2 = 0; posicao2 < matriz.length; posicao2++) {
-            System.out.println(matriz[posicao2][0] + "\t" + matriz[posicao2][1] + "\t" + matriz[posicao2][2] + "\t" + matriz[posicao2][3]);
+        System.out.println("--------------------------------------------------");
+        System.out.println("ID" + "\t" + "Nome" + "\t\t\t" + "E-mail" + "\t\t\t\t\t" + "Telefone");
+        for (int posicao2 = 1; posicao2 < matriz.length; posicao2++) {
+            System.out.println(matriz[posicao2][0] + "\t" + matriz[posicao2][1] + "\t\t\t" + matriz[posicao2][2] + "\t\t\t" + matriz[posicao2][3]);
         }
+        System.out.println("--------------------------------------------------");
         return matriz;
 
     }
     static String[][] atualizar(String[][] matriz){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Qual usuário você deseja Atualizar/editar");
+        System.out.print("Qual usuário você deseja Atualizar/editar:");
         String editar = scanner.nextLine();
         for (int posicao3 = 0; posicao3 < matriz.length; posicao3++) {
             if (editar.equals(matriz[posicao3][0])) {
                 System.out.println("Cadastro da pessoa " + posicao3);
-                System.out.println("ID: ");
+                System.out.print("ID: ");
                 matriz[posicao3][0] = scanner.nextLine();
 
-                System.out.println("Nome: ");
+                System.out.print("Nome: ");
                 matriz[posicao3][1] = scanner.nextLine();
 
-                System.out.println("E-mail: ");
+                System.out.print("E-mail: ");
                 matriz[posicao3][2] = scanner.nextLine();
 
-                System.out.println("Telefone: ");
+                System.out.print("Telefone: ");
                 matriz[posicao3][3] = scanner.nextLine();
             }
 
@@ -97,7 +99,7 @@ public class Desafio {
     }
     static String[][] deletar (String[][] matriz){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Qual usuário você deseja apagar?");
+        System.out.print("Qual usuário você deseja apagar:");
         String deletar = scanner.nextLine();
         for (int posicao4 = 0; posicao4 < matriz.length; posicao4++) {
             if (deletar.equals(matriz[posicao4][0])) {
@@ -112,5 +114,5 @@ public class Desafio {
         return matriz;
 
         }
-    }
+}
 
