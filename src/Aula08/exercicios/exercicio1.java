@@ -13,7 +13,7 @@ public class exercicio1 {
             for (int vezes = 0; vezes < 5; vezes++) {
                 System.out.println("Fale o nome do " +vezes+" aluno.");
                 String textoAluno = scanner.nextLine();
-                fileWriter.write("\n"+textoAluno);
+                fileWriter.write( vezes == 0 ? textoAluno : "\n"+textoAluno );
             }
             fileWriter.close();
             System.out.println("Pronto");
