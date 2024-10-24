@@ -3,14 +3,18 @@ package Aula07.exercicios;
 public class exercicio9 {
     public static void main(String[] args) {
         System.out.println("-------------------Exercício 9: Função para Calcular a Potência de Um Número-------------------");
-        int calculo = calcularPotencia(5,8);
+        int calculo = calcularPotencia(9,8);
 
 
     }
 
     static int calcularPotencia(int base, int expoente) {
         int base2 = base;
-        if (expoente == 1){
+        if (expoente == 0){
+            base = 1;
+            System.out.println(base);
+        }
+        if (expoente == 1 ){
             System.out.println(base);
         }
         for (int expoente2 = expoente; expoente2 >= 0;) {
@@ -19,6 +23,7 @@ public class exercicio9 {
             expoente2--;
             if (expoente2 == 1) {
                 System.out.println(resultado);
+                System.out.println(base);
             }
         }
         return expoente;
