@@ -3,11 +3,15 @@ package Desafio;
 import java.util.Scanner;
 
 public class Desafio {
+
+    static String[][] matriz = {null};
+
     public static void main(String[] args) {
         System.out.println("-------------------Desafio!!!!-------------------");
         Scanner scanner = new Scanner(System.in);
+        String[] cabecalho = {"Id","Nome","Email","Telefone"};
 
-        String[][] matriz = {};
+        matriz[0] = cabecalho;
         boolean entrada = true;
 
         while (entrada) {
@@ -16,20 +20,19 @@ public class Desafio {
             scanner.nextLine();
             switch (escolhaMenu) {
                 case 1:
-                    matriz = cadastrar(matriz);
+                    matriz = cadastrar(matriz, scanner);
                     break;
                 case 2:
                     consultar(matriz);
                     break;
                 case 3:
-                    consultar(matriz);
-                    matriz = atualizar(matriz);
+                    matriz = atualizar(matriz, scanner);
                     break;
                 case 4:
-                    consultar(matriz);
-                    matriz = deletar(matriz);
+                    matriz = deletar(matriz, scanner);
                     break;
                 case 5:
+                    System.out.println("Fim do programa");
                     entrada = false;
                     break;
                 default:
@@ -37,31 +40,32 @@ public class Desafio {
                     break;
             }
         }
-
+        scanner.close();
     }
 
-    static String[][] cadastrar(String[][] matriz) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Quantas pessoas você deseja cadastrar:");
-        int numCadastros = scanner.nextInt();
+    static String[][] cadastrar(String[][] matriz, Scanner scanner) {
+        System.out.print("Digite a quantidade de usuarios que deseja cadastrar:");
+        int qtdusuarios = scanner.nextInt();
         scanner.nextLine();
-        matriz = new String[numCadastros + 1][4];
-        for (int posicao = 1; posicao < numCadastros+1; posicao++) {
-            System.out.println("Cadastro da pessoa " + posicao);
-            System.out.print("ID: ");
-            matriz[posicao][0] = scanner.nextLine();
 
-            System.out.print("Nome: ");
-            matriz[posicao][1] = scanner.nextLine();
+        String[][] novaMatriz = new String[qtdusuarios+ matriz.length][matriz[0].length];
 
-            System.out.print("E-mail: ");
-            matriz[posicao][2] = scanner.nextLine();
+        for (int linhas = 0; linhas < matriz.length; linhas++) {
+            for (int colunas = 0; colunas < matriz[0].length; colunas++) {
+                novaMatriz[linhas][colunas] = matriz[linhas][colunas];
 
-            System.out.print("Telefone: ");
-            matriz[posicao][3] = scanner.nextLine();
-
+            }
         }
-        return matriz;
+
+        System.out.println("Preencha os dados a seguir: ");
+
+        for (int linhas = matriz.length; linhas < novaMatriz.length ; linhas++) {
+            for (int colunas = 0; colunas < matriz[0].length; colunas++) {
+                System.out.print(matriz[0][colunas] + ": ");
+                novaMatriz [linhas][colunas] = scanner.nextLine();
+            }
+        }
+        return novaMatriz;
     }
 
     static String[][] consultar(String[][] matriz) {
@@ -74,8 +78,8 @@ public class Desafio {
         return matriz;
 
     }
-    static String[][] atualizar(String[][] matriz){
-        Scanner scanner = new Scanner(System.in);
+    static String[][] atualizar(String[][] matriz, Scanner scanner){
+        consultar(matriz);
         System.out.print("Qual usuário você deseja Atualizar/editar:");
         String editar = scanner.nextLine();
         for (int posicao3 = 0; posicao3 < matriz.length; posicao3++) {
@@ -92,13 +96,16 @@ public class Desafio {
 
                 System.out.print("Telefone: ");
                 matriz[posicao3][3] = scanner.nextLine();
+            }else {
+                System.out.println("Esse usuário não existe, escolha outro.");
+                break;
             }
 
         }
         return matriz;
     }
-    static String[][] deletar (String[][] matriz){
-        Scanner scanner = new Scanner(System.in);
+    static String[][] deletar (String[][] matriz, Scanner scanner){
+        consultar(matriz);
         System.out.print("Qual usuário você deseja apagar:");
         String deletar = scanner.nextLine();
         for (int posicao4 = 0; posicao4 < matriz.length; posicao4++) {
