@@ -2,7 +2,7 @@ package Desafio;
 
 import java.util.Scanner;
 
-public class Desafio {
+public class DesafioMeu {
 
     static String[][] matriz = {null};
 
