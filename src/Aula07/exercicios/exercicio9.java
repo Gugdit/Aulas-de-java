@@ -4,12 +4,14 @@ public class exercicio9 {
     public static void main(String[] args) {
         System.out.println("-------------------Exercício 9: Função para Calcular a Potência de Um Número-------------------");
         int calculo = calcularPotencia(9,8);
+        System.out.println("Resultado é " + calculo);
 
 
     }
 
     static int calcularPotencia(int base, int expoente) {
         int base2 = base;
+        int total = 0;
         if (expoente == 0){
             base = 1;
             System.out.println(base);
@@ -23,10 +25,10 @@ public class exercicio9 {
             expoente2--;
             if (expoente2 == 1) {
                 System.out.println(resultado);
-                System.out.println(base);
+                total = resultado;
             }
         }
-        return expoente;
+        return total;
 
 
 

@@ -1,14 +1,17 @@
 package Desafio;
 
+import java.io.*;
 import java.util.Scanner;
 
-public class Desafio2prof_Flexivel {
+public class Desafio3prof_Flexivel {
 
     static String[][] matrizCadastro = {null};
     static Scanner scanner = new Scanner(System.in);
     static String[] cabecalho = {"ID", "Nome", "Telefone", "Email"};
+    static File bancoDeDados = new File("src\\Desafio\\bancoDeDados.txt");
 
     public static void main(String[] args) {
+        carregarDadosDoArquivo();
         matrizCadastro[0]=cabecalho;
         int opcao;
         do {
@@ -67,6 +70,7 @@ public class Desafio2prof_Flexivel {
             }
         }
         matrizCadastro =  novaMatriz;
+        salvarDadosNoArquivo();
     }
 
     private static void exibirCadastro() {
@@ -97,6 +101,7 @@ public class Desafio2prof_Flexivel {
         }
         System.out.println("Usuário atualizado com sucesso!!!:");
         exibirCadastro();
+        salvarDadosNoArquivo();
 
 
     }
@@ -118,5 +123,41 @@ public class Desafio2prof_Flexivel {
         }
         matrizCadastro = novaMatriz;
         exibirCadastro();
+        salvarDadosNoArquivo();
     }
+    private static void salvarDadosNoArquivo(){
+
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(bancoDeDados))) {
+            for(String[] linhaMatriz : matrizCadastro){
+                bufferedWriter.write(String.join(",",linhaMatriz)+ "\n");
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private static void carregarDadosDoArquivo(){
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(bancoDeDados))){
+            if (!bancoDeDados.exists())
+                return;
+            String linha = "", dados = "";
+
+            while ((linha = bufferedReader.readLine())!=null) {
+                dados+= linha + "\n";
+            }
+
+            String[] qtdLinhas = dados.split("\n");
+            int qtdColunas = qtdLinhas[0].split(",").length;
+
+            matrizCadastro = new String[qtdLinhas.length][qtdColunas];
+
+            for (int linhas = 0; linhas < qtdLinhas.length; linhas++) {
+                matrizCadastro[linhas] = qtdLinhas[linhas].split(",");
+            }
+
+        }catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        }
 }
+
